@@ -1,40 +1,22 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View, StyleSheet, Image, Button } from 'react-native';
-import diamondImg from "./assets/diamond.png"
+import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import SplashScreen from './components/splashScreen';
 
-const App = () => {
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Prueba</Text>
-      <Image 
-        source={{uri: 'https://picsum.photos/200/200'}}
-        style={styles.image}
-      />
-      <Button
-        color="red"
-        title="Press it"
-        onPress= {() => console.log("Esto es una prueba.")}
-      />
-    </View>
+    <SafeAreaProvider>
+      <SplashScreen></SplashScreen>
+    </SafeAreaProvider>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    backgroundColor: '#292929' 
-  },
-  title: {
-    fontSize: 20, 
-    color: 'white'
-  },
-  image: {
-    height: 200, 
-    width: 200,
-    borderRadius: 100
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
-})
-
-export default App;
+});
