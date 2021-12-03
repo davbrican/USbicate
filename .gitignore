@@ -104,4 +104,4 @@ dist
 .tern-port
 
 #Expo
-.expo\web\cache
+.expo/web/cache/*
