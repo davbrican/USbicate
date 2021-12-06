@@ -1,34 +1,32 @@
-import React from 'react'
+import React from 'react';
 
-import { createAppContainer } from 'react-navigation'
-import { createDrawerNavigator } from 'react-navigation-drawer'
-import { Dimensions } from 'react-native'
+import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
-import { Feather } from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons';
 
-import { HomeScreen, EventsScreen} from './screens'
-import SideBar from './components/SliderBar'
+import { HomeScreen, EventsScreen } from './screens';
+import SideBar from './components/SliderBar';
 
 const DrawerNavigator = createDrawerNavigator({
-  HomeScreen:{
+  HomeScreen: {
     screen: HomeScreen,
     navigationOptions: {
-      title: "Inicio",
-      drawerIcon: ({tintColor}) => <Feather name="home" size={16} color={tintColor}/>
+      title: 'Inicio',
+      drawerIcon: ({ tintColor }) => <Feather name='home' size={16} color={tintColor} />
     }
   },
-  EventsScreen:{
+  EventsScreen: {
     screen: EventsScreen,
     navigationOptions: {
-      title: "Eventos",
-      drawerIcon: ({tintColor}) => <Feather name="flag" size={16} color={tintColor}/>
+      title: 'Eventos',
+      drawerIcon: ({ tintColor }) => <Feather name='flag' size={16} color={tintColor} />
     }
   }
 },
 {
-  contentComponent: props => <SideBar{...props}/>
+  contentComponent: props => <SideBar {...props} />
 }
-)
+);
 
 export default createAppContainer(DrawerNavigator);
-
