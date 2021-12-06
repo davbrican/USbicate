@@ -7,7 +7,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint": "semistandard",
+    "lint-fix": "semistandard --fix"
   },
   "dependencies": {
     "@expo/vector-icons": "^12.0.5",
@@ -24,6 +26,7 @@
     "react-native-web": "0.17.1",
     "react-navigation": "^4.4.4",
     "react-navigation-drawer": "^2.7.1"
+    "semistandard": "^16.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

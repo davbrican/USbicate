@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import { Animated, Dimensions, View } from "react-native";
+import React, { useEffect, useRef } from 'react';
+import { Animated, Dimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import logoInnosoft from "../assets/logo-innosoft.png"
