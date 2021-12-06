@@ -3,6 +3,7 @@ import { Animated, Dimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import logoInnosoft from '../assets/logo-innosoft.png';
+import logoUsbicate from '../assets/USbicate.png';
 import Home from './home';
 
 export default function SplashScreen () {
@@ -14,11 +15,11 @@ export default function SplashScreen () {
 
   // Scaling Down Both logo and Title...
   const scaleLogo = useRef(new Animated.Value(1)).current;
-  const scaleTitle = useRef(new Animated.Value(1)).current;
+  const scaleLogo2 = useRef(new Animated.Value(1)).current;
 
   // Offset Animation....
   const moveLogo = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
-  const moveTitle = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
+  const moveLogo2 = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
 
   // Animating COntent...
   const contentTransition = useRef(new Animated.Value(Dimensions.get('window').height)).current;
@@ -41,15 +42,15 @@ export default function SplashScreen () {
           scaleLogo,
           {
             // Scaling to 0.35
-            toValue: 0.3,
+            toValue: 0.5,
             useNativeDriver: true
           }
         ),
         Animated.timing(
-          scaleTitle,
+          scaleLogo2,
           {
             // Scaling to 0.8
-            toValue: 0.8,
+            toValue: 0.5,
             useNativeDriver: true
           }
         ),
@@ -59,19 +60,18 @@ export default function SplashScreen () {
             // Moving to Right Most...
             toValue: {
               x: (Dimensions.get('window').width / 2) - 35,
-              y: (Dimensions.get('window').height / 2) - 5
+              y: (Dimensions.get('window').height / 2) + 35
             },
             useNativeDriver: true
           }
         ),
         Animated.timing(
-          moveTitle,
+          moveLogo2,
           {
-            // Moving to Right Most...
+            // Moving to Left Most...
             toValue: {
-              x: 0,
-              // Since image size is 100...
-              y: (Dimensions.get('window').height / 2) - 90
+              x: (Dimensions.get('window').width / 2) - 365,
+              y: (Dimensions.get('window').height / 2) - 80
             },
             useNativeDriver: true
           }
@@ -120,6 +120,7 @@ export default function SplashScreen () {
               width: 100,
               height: 100,
               marginBottom: 20,
+              marginRight: 10,
               transform: [
                 { translateX: moveLogo.x },
                 { translateY: moveLogo.y },
@@ -129,17 +130,19 @@ export default function SplashScreen () {
             }}
           />
 
-          <Animated.Text style={{
-            fontSize: 25,
-            fontWeight: 'bold',
-            color: 'white',
-            transform: [
-              { translateY: moveTitle.y },
-              { scale: scaleTitle }
-            ]
-          }}
-          >Chatty
-          </Animated.Text>
+          <Animated.Image
+            source={logoUsbicate} style={{
+              width: 200,
+              height: 100,
+              marginBottom: 20,
+              transform: [
+                { translateX: moveLogo2.x },
+                { translateY: moveLogo2.y },
+                { scale: scaleLogo2 }
+
+              ]
+            }}
+          />
 
         </Animated.View>
 
@@ -158,9 +161,7 @@ export default function SplashScreen () {
         ]
       }}
       >
-
         <Home />
-
       </Animated.View>
 
     </View>
