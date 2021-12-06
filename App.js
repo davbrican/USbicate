@@ -1,40 +1,32 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, Button } from 'react-native';
-import diamondImg from "./assets/diamond.png"
 
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Prueba</Text>
-      <Image 
-        source={{uri: 'https://picsum.photos/200/200'}}
-        style={styles.image}
-      />
-      <Button
-        color="red"
-        title="Press it"
-        onPress= {() => console.log("Esto es una prueba.")}
-      />
-    </View>
-  );
-};
+import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
-const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    backgroundColor: '#292929' 
+import { Feather } from '@expo/vector-icons';
+
+import { HomeScreen, EventsScreen } from './screens';
+import SideBar from './components/SliderBar';
+
+const DrawerNavigator = createDrawerNavigator({
+  HomeScreen: {
+    screen: HomeScreen,
+    navigationOptions: {
+      title: 'Inicio',
+      drawerIcon: ({ tintColor }) => <Feather name='home' size={16} color={tintColor} />
+    }
   },
-  title: {
-    fontSize: 20, 
-    color: 'white'
-  },
-  image: {
-    height: 200, 
-    width: 200,
-    borderRadius: 100
+  EventsScreen: {
+    screen: EventsScreen,
+    navigationOptions: {
+      title: 'Eventos',
+      drawerIcon: ({ tintColor }) => <Feather name='flag' size={16} color={tintColor} />
+    }
   }
-})
+},
+{
+  contentComponent: props => <SideBar {...props} />
+}
+);
 
-export default App;
+export default createAppContainer(DrawerNavigator);
