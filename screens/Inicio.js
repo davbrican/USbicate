@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import map from '../assets/map.png';
 
-export default function Inicio () {
+export const Inicio = () => {
   return (
     <View>
       <Image

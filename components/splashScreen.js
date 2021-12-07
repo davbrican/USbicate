@@ -6,7 +6,7 @@ import logoInnosoft from '../assets/logo-innosoft.png';
 import logoUsbicate from '../assets/USbicate.png';
 import Home from './home';
 
-export default function SplashScreen () {
+export const SplashScreen = () => {
   // SafeArea Value...
   const edges = useSafeAreaInsets();
 
