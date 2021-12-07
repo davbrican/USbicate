@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-export const Home = () => {
+const Home = () => {
   const edges = useSafeAreaInsets();
 
   return (
@@ -19,3 +19,5 @@ export const Home = () => {
     </View>
   );
 }
+
+export default Home;

@@ -6,7 +6,7 @@ import logoInnosoft from '../assets/logo-innosoft.png';
 import logoUsbicate from '../assets/USbicate.png';
 import Home from './home';
 
-export const SplashScreen = () => {
+const SplashScreen = () => {
   // SafeArea Value...
   const edges = useSafeAreaInsets();
 
@@ -167,3 +167,4 @@ export const SplashScreen = () => {
     </View>
   );
 }
+export default SplashScreen;

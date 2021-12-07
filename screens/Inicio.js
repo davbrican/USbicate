@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import map from '../assets/map.png';
 
-export const Inicio = () => {
+const Inicio = () => {
   return (
     <View>
       <Image
@@ -43,3 +43,5 @@ const styles = StyleSheet.create({
   }
 
 });
+
+export default Inicio;
