@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-na
 import { FontAwesome5 } from '@expo/vector-icons';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Inicio from './Inicio';
-import SplashScreen from '../components/splashScreen';
+import SplashScreen from './splashScreen';
+import Eventos from './Eventos';
 
 export default class Screen extends React.Component {
   render () {
@@ -20,7 +21,7 @@ export default class Screen extends React.Component {
             </TouchableOpacity>
             <View style={{ margin: 20, alignItems: 'center', justifyContent: 'center' }}>
               {this.props.name === 'Inicio' ? <Inicio /> : null}
-              {this.props.name === 'Eventos' ? <Text style={styles.text}>{this.props.name} Screen</Text> : null}
+              {this.props.name === 'Eventos' ? <Eventos/> : null}
             </View>
           </SafeAreaView>
         </View>
