@@ -21,7 +21,7 @@ export default class Screen extends React.Component {
             </TouchableOpacity>
             <View style={{ margin: 20, alignItems: 'center', justifyContent: 'center' }}>
               {this.props.name === 'Inicio' ? <Inicio /> : null}
-              {this.props.name === 'Eventos' ? <Text style={styles.text}>{this.props.name} Screen</Text> : null}
+              {this.props.name === 'Eventos' ? <Eventos/> : null}
             </View>
           </SafeAreaView>
         </View>
