@@ -70,7 +70,7 @@ export default function SplashScreen () {
           {
             // Moving to Left Most...
             toValue: {
-              x: (Dimensions.get('window').width / 2) - 365,
+              x: -(Dimensions.get('window').width / 2) + 55,
               y: (Dimensions.get('window').height / 2) - 80
             },
             useNativeDriver: true

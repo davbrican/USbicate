@@ -1,19 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Dimensions } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Inicio from './Inicio';
-import SplashScreen from '../components/splashScreen';
+import SplashScreen from './splashScreen';
 
 export default class Screen extends React.Component {
   render () {
     return (
-      <SafeAreaProvider style={styles.container}>
-        <SplashScreen />
+      <SafeAreaProvider>
+        <SplashScreen/>
+        <View style={{height:85}}></View>
         <View style={styles.container}>
-          <SafeAreaView style={{ flex: 1 }}>
+          <SafeAreaView style={{flex:1}}>
             <TouchableOpacity
-              style={{ alignItems: 'flex-start', paddingTop: 50, margin: 10 }}
+              style={{alignItems: 'flex-start', margin: 10}}
               onPress={this.props.navigation.openDrawer}
             >
               <FontAwesome5 name='bars' size={24} color='#161924' />
@@ -31,7 +32,8 @@ export default class Screen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 15,
+    position: 'relative',
+    alignContent: 'center',
     flex: 1,
     backgroundColor: '#fff'
   },
